@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patients Detailsa</title>
+</head>
+<body>
+<h1>List of registered Patients</h1>
+<table align="center" border="2px solid block">
+    <tr>
+        <th>name</th>
+        <th>age</th>
+        <th>disease</th>
+        <th>password</th>
+
+    </tr>
+{%for i in data%}
+    <tr>
+        <td>{{i.first_name}}</td>
+        <td>{{i.age}}</td>
+        <td>{{i.disease}}</td>
+        {% csrf_token %}
+        <td>{{i.password}}</td>
+
+
+    </tr>
+
+{%endfor%}
+</table>
+
+</body>
+</html>
